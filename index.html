@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Operating System</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <div id="desktop">
+      <!-- Desktop Background -->
+      <div class="desktop-background"></div>
+      
+      <!-- Desktop Icons -->
+      <div class="desktop-icons">
+        <div class="desktop-icon" data-app="file-manager">
+          <div class="icon-image folder-icon"></div>
+          <span class="icon-label">File Manager</span>
+        </div>
+        <div class="desktop-icon" data-app="text-editor">
+          <div class="icon-image text-editor-icon"></div>
+          <span class="icon-label">Text Editor</span>
+        </div>
+        <div class="desktop-icon" data-app="calculator">
+          <div class="icon-image calculator-icon"></div>
+          <span class="icon-label">Calculator</span>
+        </div>
+        <div class="desktop-icon" data-app="browser">
+          <div class="icon-image browser-icon"></div>
+          <span class="icon-label">Web Browser</span>
+        </div>
+        <div class="desktop-icon" data-app="settings">
+          <div class="icon-image settings-icon"></div>
+          <span class="icon-label">Settings</span>
+        </div>
+        <div class="desktop-icon" data-app="terminal">
+          <div class="icon-image terminal-icon"></div>
+          <span class="icon-label">Terminal</span>
+        </div>
+        <div class="desktop-icon" data-app="music-player">
+          <div class="icon-image music-icon"></div>
+          <span class="icon-label">Music Player</span>
+        </div>
+        <div class="desktop-icon" data-app="image-viewer">
+          <div class="icon-image image-icon"></div>
+          <span class="icon-label">Image Viewer</span>
+        </div>
+      </div>
+
+      <!-- Windows Container -->
+      <div id="windows-container"></div>
+
+      <!-- Taskbar -->
+      <div class="taskbar">
+        <div class="taskbar-left">
+          <button class="start-button" id="start-button">
+            <div class="start-icon"></div>
+          </button>
+          <div class="taskbar-apps" id="taskbar-apps"></div>
+        </div>
+        
+        <div class="taskbar-center">
+          <div class="search-box">
+            <input type="text" placeholder="Search..." id="search-input">
+            <div class="search-icon"></div>
+          </div>
+        </div>
+        
+        <div class="taskbar-right">
+          <div class="system-tray">
+            <div class="tray-icon wifi-icon" id="wifi-icon" title="WiFi Connected"></div>
+            <div class="tray-icon volume-icon" id="volume-icon" title="Volume"></div>
+            <div class="tray-icon battery-icon" id="battery-icon" title="Battery: 85%"></div>
+          </div>
+          <div class="clock" id="clock">
+            <div class="time">12:00 PM</div>
+            <div class="date">6/20/2025</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Start Menu -->
+      <div class="start-menu" id="start-menu">
+        <div class="start-menu-header">
+          <div class="user-info">
+            <div class="user-avatar"></div>
+            <span class="username">User</span>
+          </div>
+        </div>
+        <div class="start-menu-content">
+          <div class="app-grid">
+            <div class="app-item" data-app="file-manager">
+              <div class="app-icon folder-icon"></div>
+              <span>File Manager</span>
+            </div>
+            <div class="app-item" data-app="text-editor">
+              <div class="app-icon text-editor-icon"></div>
+              <span>Text Editor</span>
+            </div>
+            <div class="app-item" data-app="calculator">
+              <div class="app-icon calculator-icon"></div>
+              <span>Calculator</span>
+            </div>
+            <div class="app-item" data-app="browser">
+              <div class="app-icon browser-icon"></div>
+              <span>Web Browser</span>
+            </div>
+            <div class="app-item" data-app="settings">
+              <div class="app-icon settings-icon"></div>
+              <span>Settings</span>
+            </div>
+            <div class="app-item" data-app="terminal">
+              <div class="app-icon terminal-icon"></div>
+              <span>Terminal</span>
+            </div>
+            <div class="app-item" data-app="music-player">
+              <div class="app-icon music-icon"></div>
+              <span>Music Player</span>
+            </div>
+            <div class="app-item" data-app="image-viewer">
+              <div class="app-icon image-icon"></div>
+              <span>Image Viewer</span>
+            </div>
+          </div>
+        </div>
+        <div class="start-menu-footer">
+          <button class="power-button" id="power-button" title="Power Options">⏻</button>
+        </div>
+      </div>
+
+      <!-- System Tray Popups -->
+      <div id="wifi-popup" class="tray-popup">
+        <div class="popup-header">WiFi Networks</div>
+        <div class="wifi-list">
+          <div class="wifi-item connected">
+            <span class="wifi-name">Home Network</span>
+            <span class="wifi-signal">📶</span>
+          </div>
+          <div class="wifi-item">
+            <span class="wifi-name">Office WiFi</span>
+            <span class="wifi-signal">📶</span>
+          </div>
+          <div class="wifi-item">
+            <span class="wifi-name">Guest Network</span>
+            <span class="wifi-signal">📶</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="volume-popup" class="tray-popup">
+        <div class="popup-header">Volume</div>
+        <div class="volume-control">
+          <input type="range" id="volume-slider" min="0" max="100" value="75">
+          <span id="volume-value">75%</span>
+        </div>
+      </div>
+
+      <div id="battery-popup" class="tray-popup">
+        <div class="popup-header">Battery</div>
+        <div class="battery-info">
+          <div class="battery-level">85%</div>
+          <div class="battery-status">Charging</div>
+          <div class="battery-time">2 hours remaining</div>
+        </div>
+      </div>
+
+      <!-- Calendar Popup -->
+      <div id="calendar-popup" class="calendar-popup">
+        <div class="calendar-header">
+          <button id="prev-month">‹</button>
+          <span id="current-month">December 2025</span>
+          <button id="next-month">›</button>
+        </div>
+        <div class="calendar-grid" id="calendar-grid">
+          <!-- Calendar will be generated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
