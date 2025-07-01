@@ -1,4 +1,7 @@
-# 🖥️ WebOS – Browser-Based Desktop Operating System Simulation
+🙋‍♂️ Author
+Vaibhav Singh
+🎯 Frontend Developer & Creative Coder
+🌐 Portfolio | GitHub | LinkedIn                                                                                                                                                                                     🖥️ WebOS – Browser-Based Desktop Operating System Simulation
 
 A fully responsive, draggable-window desktop OS simulation built using **HTML**, **CSS**, and **vanilla JavaScript**. This project mimics an operating system environment with features like taskbar, start menu, system tray, calendar, terminal, and more — all inside the browser!
 
